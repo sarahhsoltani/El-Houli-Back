@@ -3,6 +3,7 @@ const router=express.Router()
 const { check } = require("express-validator");
 const User =require ("../controllers/userCoontrollers")
 const authentification = require ("../middleware/auth")
+const admin =require ("../middleware/admin")
 router.post("/register",
     [
       check("name", "please enter your name")
@@ -25,5 +26,5 @@ router.post("/login",[
 router.get("/allUser",User.getUsers)
 router.get("/allUserAdmin",User.AllUsers)
 router.get("/current",authentification,User.currentUsers)
-
+router.delete("/deleteUser/:id",authentification,admin,User.deleteUser)
 module.exports=router 
