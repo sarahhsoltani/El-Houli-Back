@@ -61,7 +61,7 @@ getProduit: async (req, res) => {
 recentProduit: async (req, res) => {
     try {
       const publications = await Produit.find()
-        .limit(2)
+        .limit(6)
         .sort({ date: -1 }); 
    
       if (!publications)

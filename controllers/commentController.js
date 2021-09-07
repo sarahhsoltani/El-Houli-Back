@@ -15,7 +15,7 @@ module.exports={
           const newComment = {
             user: req.user._id,
             text: req.body.text     
-          };    
+          };     
     
           publication.Comments.unshift(newComment);
           await publication.save();
@@ -53,7 +53,7 @@ module.exports={
           ).indexOf(req.params.comment_id);
     
           publication.Comments.splice(removeIndex, 1);
-    
+       
           await publication.save();
     
           res.json(publication.Comments);
