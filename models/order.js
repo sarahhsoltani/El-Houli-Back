@@ -22,7 +22,10 @@ const orderSchema = mongoose.Schema(
         price: 
         { type: Number, 
        }, 
-
+       date:{
+        type: Date, 
+        default: Date.now
+    },
         product: {
           type: mongoose.Schema.Types.ObjectId,
          

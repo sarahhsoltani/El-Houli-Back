@@ -41,14 +41,25 @@ getOrderById: async (req, res) => {
     console.error(error.message);
     res.status(500).send("Server error");
   }
-}
+},
 
 // @desc    Get all orders
 // @route   GET /api/orders
 // @access  Private/Admin
-//  getOrders : async (req, res) => {
-//   const orders = await Order.find({}).populate('user', 'id name')
-//   res.json(orders)
-// }
+ getOrders : async (req, res) => {
+  const orders = await Order.find({}).populate('user', 'id name')
+  res.json(orders)
+},
+   //delete a contact form
+   deleteOrder: async (req,res)=>{
+    try {
+      const order = await Order.findByIdAndDelete(req.params.id)
+      res.json("order removed")
+    }  
+    catch (error) {
+     console.error(error.message);
+     res.status(500).send("server error")
+   }
+},
   
 } 

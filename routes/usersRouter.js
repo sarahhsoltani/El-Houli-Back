@@ -28,3 +28,4 @@ router.get("/allUserAdmin",User.AllUsers)
 router.get("/current",authentification,User.currentUsers)
 router.delete("/deleteUser/:id",authentification,admin,User.deleteUser)
 module.exports=router 
+  

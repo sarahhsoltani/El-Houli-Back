@@ -16,10 +16,10 @@ const orders=require("./routes/orderRouter")
 const contact=require("./routes/contactRouter")
 //middlewares
 app.use('/api/users',users)  
-app.use('/api/produits',produits)
+app.use('/api/produits',produits)   
 app.use('/api/comments',comment)  
 app.use("/api/orders",orders)
-app.use("/api/contact",contact)  
+app.use("/api/contact",contact)    
 //config server
 const port = process.env.PORT || 4000; 
 app.listen(port, () => console.log(`Server running on port ${port}`.yellow.bold));  

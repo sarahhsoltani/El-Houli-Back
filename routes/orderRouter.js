@@ -8,5 +8,7 @@ router.post("/postOrder/:id",authentification,order.addOrderItems)
 // get order byId
 router.get("/getOrderById/:id",authentification,order.getOrderById)
 // get All orders
-//router.get("/getOrders",order.getOrders)
-module.exports=router  
+router.get("/getOrders",order.getOrders)
+// delete order
+router.delete("/deleteOrder/:id",order.deleteOrder)
+module.exports=router    
